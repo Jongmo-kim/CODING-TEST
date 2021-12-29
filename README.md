@@ -77,6 +77,9 @@
         ```
         make all
         ```
+  - ### make: *** No rule to make target 'ExampleProject'.  Stop.
+    제목과 같이 에러가 날땐 vscode에서 [GCC ...] 옆에 [all]로 설정되어있는지 확인한다. 
+    `/usr/bin/cmake --build /home/jongmo/proj/CODING-TEST/build --config Debug --target ExampleProject -j 6 --`와 같은 명령어에서 --target ExampleProject부분때문에 에러가 나는것이다.
   - ### 빌드 결과물 
     각각 `/build/src/ExampleProject_run`, `/build/test/Example_Project_test` 파일에서 결과를 확인할수 있습니다.
     추후 빌드 결과파일을 `/build/bin`폴더로 이동시킬 예정입니다.
