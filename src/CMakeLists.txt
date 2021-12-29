@@ -3,7 +3,9 @@ set(BINARY ${CMAKE_PROJECT_NAME})
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
 
 set(SOURCES ${SOURCES})
+set(OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/bin)
 
 add_executable(${BINARY}_run ${SOURCES})
 
 add_library(${BINARY}_lib STATIC ${SOURCES})
+set_target_properties(${TARGET} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
