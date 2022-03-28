@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "BOJ-1049.cpp"
+#include "BOJ-1049.h"
 TEST(BOJ1049TEST, test1) {
     //arrange
 	string inputstring(R"(
