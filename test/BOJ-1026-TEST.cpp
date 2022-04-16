@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "BOJ-1026.h"
 
-TEST(BOJ1026TEST, test1) {
+TEST(BOJ1026, test1) {
     //arrange
 	string inputstring(R"(
 5
@@ -36,7 +36,7 @@ TEST(BOJ1026TEST, test1) {
     //assert
     EXPECT_EQ (result,  18);
 }
-TEST(BOJ1026TEST, test2) {
+TEST(BOJ1026, test2) {
     //arrange
 	string inputstring(R"(
 3
@@ -71,7 +71,7 @@ TEST(BOJ1026TEST, test2) {
     //assert
     EXPECT_EQ (result,  80);
 }
-TEST(BOJ1026TEST, test3) {
+TEST(BOJ1026, test3) {
     //arrange
 	string inputstring(R"(
 9

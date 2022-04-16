@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "BOJ-1049.h"
-TEST(BOJ1049TEST, test1) {
+TEST(BOJ1049, test1) {
     //arrange
 	string inputstring(R"(
 4 2
@@ -26,7 +26,7 @@ TEST(BOJ1049TEST, test1) {
     //assert
     EXPECT_EQ (result,  12);
 }
-TEST(BOJ1049TEST, test2) {
+TEST(BOJ1049, test2) {
     //arrange
 	string inputstring(R"(
 10 3
@@ -53,7 +53,7 @@ TEST(BOJ1049TEST, test2) {
     //assert
     EXPECT_EQ (result,  36);
 }
-TEST(BOJ1049TEST, test3) {
+TEST(BOJ1049, test3) {
     //arrange
 	string inputstring(R"(
 15 1
@@ -78,7 +78,7 @@ TEST(BOJ1049TEST, test3) {
     //assert
     EXPECT_EQ (result,  300);
 }
-TEST(BOJ1049TEST, test4) {
+TEST(BOJ1049, test4) {
     //arrange
 	string inputstring(R"(
 17 1
@@ -103,7 +103,7 @@ TEST(BOJ1049TEST, test4) {
     //assert
     EXPECT_EQ (result,  36);
 }
-TEST(BOJ1049TEST, test5) {
+TEST(BOJ1049, test5) {
     //arrange
 	string inputstring(R"(
 7 2
@@ -129,7 +129,7 @@ TEST(BOJ1049TEST, test5) {
     //assert
     EXPECT_EQ (result,  12);
 }
-TEST(BOJ1049TEST, test6) {
+TEST(BOJ1049, test6) {
     //arrange
 	string inputstring(R"(
 9 16

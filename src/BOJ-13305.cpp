@@ -4,39 +4,34 @@ using namespace std;
 
 namespace BOJ13305 {
 	unsigned long long solution(int numOfCity, vector<int> oilPriceEachCity, vector<int> distanceEachCity) {
-		int curPrice, nextPrice, curCityIdx = 0;
-		unsigned long long totalPrice = 0ULL;
+		int curPrice, nextPrice;
+		unsigned long long totalPrice = 0ULL , passedDistance = 0;
 
 		auto oilPriceIter = oilPriceEachCity.begin();
 		auto distanceIter = distanceEachCity.begin();
-
+        int size = oilPriceEachCity.size();
 		curPrice = *(oilPriceIter);
 		for (int i = 0 ; i < numOfCity ; ++i) {
-
-			if(oilPriceEachCity.size() < i + 1) {
-				totalPrice += curPrice * getTotalDistance(curCityIdx, i, distanceEachCity);
+			if(size <= i + 1) {
+				totalPrice += (unsigned long long)curPrice * passedDistance;
 				break;
 			}
-
-			
 			nextPrice = *(oilPriceIter + i + 1);
-
-			if ( curPrice < nextPrice) 
+			passedDistance +=  *(distanceIter + i);
+			if ( curPrice < nextPrice) {
 				continue;
-			else {
-				totalPrice += curPrice * getTotalDistance(curCityIdx, i, distanceEachCity);
-				curCityIdx = i + 1;
-				nextPrice = curPrice;
 			}
-
-		
+			
+			totalPrice += (unsigned long long)curPrice * passedDistance;
+			passedDistance = 0;
+			curPrice = nextPrice;
 		}
 		return totalPrice;
 	}
 
-	int getTotalDistance(int curCityIdx, int disCityIdx, vector<int> distanceEachCity) {
+	unsigned long long getTotalDistance(int curCityIdx, int disCityIdx, vector<int> distanceEachCity) {
 
-		int total = 0;
+		unsigned long long total = 0;
 		auto distanceIter = distanceEachCity.begin();
 		for (; curCityIdx <= disCityIdx ; ++curCityIdx) {
 
@@ -56,14 +51,14 @@ namespace BOJ13305 {
 		{	
 			int input;
 			cin >> input;
-			oilPriceEachCity.push_back(input);
+			distanceEachCity.push_back(input);
 		}
 
 		for (int List_i = 0; List_i < numOfCity; List_i++)
 		{	
 			int input;
 			cin >> input;
-			distanceEachCity.push_back(input);
+			oilPriceEachCity.push_back(input);
 		}
 		cout <<  BOJ13305::solution(numOfCity, oilPriceEachCity, distanceEachCity);
 	}
